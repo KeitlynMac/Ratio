@@ -7,13 +7,13 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-import logic.Clientes;
+import logic.Cliente;
 
 public class ClienteDAO {
 
     public ClienteDAO(){}
     
-    public void guardarCliente(Clientes cliente) {
+    public void guardarCliente(Cliente cliente) {
         String sql = "INSERT INTO clientes (nombre, ruc) VALUES (?, ?)";
         
         // PASO CLAVE: Llamas a getInstance() y luego a getConnection()
@@ -31,9 +31,9 @@ public class ClienteDAO {
         }
     }
 
-    public List<Clientes> listar(){
+    public List<Cliente> listar(){
             
-        List<Clientes> lista = new ArrayList<>();
+        List<Cliente> lista = new ArrayList<>();
         String sql = "SELECT * FROM Clientes;";
 
         Connection conn = Conexion.getInstance().getConnection();
@@ -42,7 +42,7 @@ public class ClienteDAO {
             ResultSet rs = ps.executeQuery()) {
 
             while (rs.next()) {
-                Clientes c = new Clientes();
+                Cliente c = new Cliente();
 
                 c.setId(rs.getInt("Id"));
                 c.setNombreApellido(rs.getString("Nombre_Apellido"));
