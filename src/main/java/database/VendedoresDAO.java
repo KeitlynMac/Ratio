@@ -1,6 +1,5 @@
 package database;
 
-import logic.Vendedor;
 
 public class VendedoresDAO {
  
