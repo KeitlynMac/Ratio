@@ -1,13 +1,13 @@
 package logic;
 
-public class Vendedores {
+public class Vendedor {
     
     private int id;
     private String usuario, clave;
 
-    public Vendedores(){}
+    public Vendedor(){}
 
-    public Vendedores(int id, String usuario, String clave){
+    public Vendedor(int id, String usuario, String clave){
         this.id = id;
         this.usuario = usuario;
         this.clave = clave;
